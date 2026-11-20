@@ -221,3 +221,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# generated outputs (regenerate with the commands in README.md)
+out/
+masks/

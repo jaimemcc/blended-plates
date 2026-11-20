@@ -1,0 +1,23 @@
+[workspace]
+authors = ["Jaime McCutcheon <j.mccutcheon@uit.no>"]
+channels = ["conda-forge"]
+name = "blended-plates"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[activation.env]
+BLENDED_FOODS_DIR = "C:/Users/jmc010/Data/blended-foods"
+
+[tasks]
+gui = "python scripts/slider_viewer.py out"
+compose-fries = "python scripts/compose_pilot.py fries_261119 meatballs_261120 out/pilot 200 400 600 750"
+compose-fusilli = "python scripts/compose_pilot.py fusilli_261119 meatballs_261120 out/pilot_fusilli 200 400 600 750"
+gifs-fries = "python scripts/make_gifs.py out/pilot out/gifs 200 400 750"
+gifs-fusilli = "python scripts/make_gifs.py out/pilot_fusilli out/gifs_fusilli 200 400 750"
+photo-check = "python scripts/photo_manifest.py check"
+
+[dependencies]
+python = "3.11.*"
+numpy = ">=2.4.6,<3"
+pillow = ">=13.0.0,<14"
+opencv = ">=5.1.0,<6"
